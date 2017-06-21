@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+	<meta name="format-detection" content="telephone=no" />  
+    <meta name="format-detection" content="email=no" />
+	<title>创始人简介</title>
+	<link rel="stylesheet" href="../css/mobile.css">
+	<link rel="stylesheet" href="../css/swiper.css">
+	<link rel="stylesheet" href="../font/iconfont.css">
+</head>
+<body>
+	<header>
+		<div class="header-container">
+			<a href="index.html"><img src="../images/logo.png"></a>
+			<div class="nav-Bt">
+				<div></div>
+				<div></div>
+				<div></div>
+			</div>
+		</div>
+		<ul class='nav'>
+			<li>
+				<a href='products.html'>
+					<span>珠宝</span>
+					<i class="iconfont icon-icon07"></i>
+				</a>
+			</li>
+			<li>
+				<a href='customization.html'>
+					<span>祖母绿定制</span>
+					<i class="iconfont icon-icon07"></i>
+				</a>
+			</li>
+			<li>
+				<a href='brandWorld.html'>
+					<span>品牌世界</span>
+					<i class="iconfont icon-icon07"></i>
+				</a>
+			</li>
+			<li>
+				<a href='aboutus.html'>
+					<span>联系我们</span>
+					<i class="iconfont icon-icon07"></i>
+				</a>
+			</li>
+		</ul>
+		<div class="header-bg"></div>
+	</header>
+	<div class='abs-user' style="background: url(../images/customization/1.png) center"></div>
+	<div class='abs-user-info'>
+		<h1>As Zhou&nbsp;&nbsp;周砚池</h1>
+		<h2>资深祖母绿鉴定师</h2>
+		<h3>长期在哥伦比亚致力于彩色宝石研究以及祖母绿分级鉴定和甄选</h3>
+	</div>
+	<div class='contact customization-contact'>
+		<div>
+			<i class="iconfont icon-dianhua"></i>
+			<h1>哥伦比亚</h1>
+			<h2>+57 3045779552</h2>
+		</div>
+		<div>
+			<i class="iconfont icon-weixin"></i>
+			<h1>微信</h1>
+			<h2>ast996919</h2>
+		</div>
+		<div>
+			<h1>中国</h1>
+			<h2>+86 15077888578</h2>
+		</div>
+		<img src="../images/TDcode.jpg" class='TDcode'>
+	</div>
+	<ul class='abs-user-info-details customization-abs-user-info-details'>
+		<li>
+			<span>学位</span>
+			<i class="iconfont icon-icon07"></i>
+			<p>哥伦比亚赛昂国立大学国际贸易硕士研究生</p>
+		</li>
+		<li>
+			<span>资历</span>
+			<i class="iconfont icon-icon07"></i>
+			<p>NGTC 国家珠宝玉石量检测中心认证<br/>国家珠宝培训中心钻石分级师，拥有相应职业资格证书<br/>国家珠宝培训中心荣誉授予宝石学家<br/>国家珠宝培训中心彩色宝石质检师<br/>国家珠宝培训中心钻石分级师<br/>国家珠宝培训中心翡翠鉴定师</p>
+			<a href='certificate.html'>查看宝石证书</a>
+		</li>
+		<li>
+			<span>地址</span>
+			<i class="iconfont icon-icon07"></i>
+			<p>Carrera 14 77a 39 Bogotá Colombia </p>
+		</li>
+	</ul>
+	<div class='customization-flow'>
+		<i class="iconfont icon-fangda"></i>
+		<img src="../images/flow.png"/>
+	</div>
+	<div class='customization-flow-big'>
+		<img src="../images/flow.png"/>
+	</div>
+
+	<div class='big-TDcode'>
+		<img src="../images/TDcode.jpg"/>
+	</div>
+	
+	<footer>
+		<ul>
+			<li><a href='products.html'>珠宝</a></li>
+			<li><a href='customization.html'>祖母绿定制</a></li>
+			<li><a href='brandWorld.html'>品牌世界</a></li>
+			<li><a href='aboutus.html'>联系我们</a></li>
+			<li class="toTopBt"><a><i class="iconfont icon-jiantou-copy"></i><span>回到页顶</span></a></li>
+		</ul>
+	</footer>
+
+	<script src='../js/jQuery.min.js'></script>
+	<script src='../js/jquery.mobile.min.js'></script>
+	<script src="../js/swiper.js"></script>
+	<script type="text/javascript">
+		$('.nav-Bt').on('tap',function(){
+			$('.nav').addClass('nav-on');
+			$('.header-bg').fadeIn(100);
+			return false
+		})
+
+		$('body').on('tap',function(){
+			$('.nav').removeClass('nav-on');
+			$('.header-bg').fadeOut(100);
+		})
+
+		$('header').on('touchmove',function(e){
+			e.preventDefault();
+		})
+
+		$('.toTopBt').on('tap',function(){
+			$('body').animate({scrollTop:0});
+		})
+
+		$(".abs-user-info-details li").on('tap',function(){
+			if($(this).attr('class')&&$(this).attr('class').indexOf('on')>-1){
+				$(this).removeClass('on');
+			}else{
+				$(this).addClass('on');
+			}
+			
+		})
+
+		$(".abs-user-info-details li p").on('tap',function(){
+			return false
+		})
+
+		$(".customization-flow").on('tap',function(){
+			$('.customization-flow-big').fadeIn(100);
+			return false
+		})
+
+		$("body").on('tap',function(){
+			$('.customization-flow-big').fadeOut(100);
+		})
+
+		$(".customization-flow-big img").on('tap',function(){
+			return false
+		})
+
+		$(".TDcode").on('tap',function(){
+			$('.big-TDcode').fadeIn(100);
+			return false
+		})
+
+		$("body").on('tap',function(){
+			$('.big-TDcode').fadeOut(100);
+		})
+
+		$(".big-TDcode img").on('tap',function(){
+			return false
+		})
+
+	</script>
+</body>
+</html>

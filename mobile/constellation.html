@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+	<meta name="format-detection" content="telephone=no" />  
+    <meta name="format-detection" content="email=no" />
+	<title>星座专题</title>
+	<link rel="stylesheet" href="../css/mobile.css">
+	<link rel="stylesheet" href="../css/swiper.css">
+	<link rel="stylesheet" href="../font/iconfont.css">
+</head>
+<body style="background: #070c18;">
+	<header>
+		<div class="header-container">
+			<a href="index.html"><img src="../images/logo.png"></a>
+			<div class="nav-Bt">
+				<div></div>
+				<div></div>
+				<div></div>
+			</div>
+		</div>
+		<ul class='nav'>
+			<li>
+				<a href='products.html'>
+					<span>珠宝</span>
+					<i class="iconfont icon-icon07"></i>
+				</a>
+			</li>
+			<li>
+				<a href='customization.html'>
+					<span>祖母绿定制</span>
+					<i class="iconfont icon-icon07"></i>
+				</a>
+			</li>
+			<li>
+				<a href='brandWorld.html'>
+					<span>品牌世界</span>
+					<i class="iconfont icon-icon07"></i>
+				</a>
+			</li>
+			<li>
+				<a href='aboutus.html'>
+					<span>联系我们</span>
+					<i class="iconfont icon-icon07"></i>
+				</a>
+			</li>
+		</ul>
+		<div class="header-bg"></div>
+	</header>
+
+	<div class="constell-banner" style="background: url(../images/constell/banner.jpg)">
+		<p>THE EMERALD CHAIN<br/>OF CONSTELLATIONS</p>
+	</div>
+
+	<div class="constell-title">
+		<h1>星座祖母绿锁骨链</h1>
+		<img src="../images/emerald/line.png">
+	</div>
+
+	<div class="constell-des">
+		历时将近三个月的时间，我亲自在哥伦比亚选出两百多颗，颜色vividgreen、净度vs、10-20分大小相近的祖母绿。我们设计团队的祖母绿独立制作款式—《星空》祖母绿锁骨链问世。 十二个神秘的星座分布由不同祖母绿走势呈现，同时第一次将现代玫瑰金工艺与传统祖母绿相结合，及其轻时尚的设计款式。从选石到制作，每一个细节力求完美。
+	</div>
+
+	<a class="constell-roder" href="customization.html">开始定制</a>
+
+	<ul class="constell-list"></ul>
+
+	<script src='../js/jQuery.min.js'></script>
+	<script src='../js/jquery.mobile.min.js'></script>
+	<script src="../js/swiper.js"></script>
+	<script src="../json/products.js"></script>
+	<script type="text/javascript">
+		$('.nav-Bt').on('tap',function(){
+			$('.nav').addClass('nav-on');
+			$('.header-bg').fadeIn(100);
+			return false
+		})
+
+		$('body').on('tap',function(){
+			$('.nav').removeClass('nav-on');
+			$('.header-bg').fadeOut(100);
+		})
+
+		$('header').on('touchmove',function(e){
+			e.preventDefault();
+		})
+
+		$('.toTopBt').on('tap',function(){
+			$('body').animate({scrollTop:0});
+		})
+
+		var ringList = getJson()['xingzuo'];
+		for(var i=0;i<ringList.length;i++){
+			$('.constell-list').append('<li>'+
+				'<a href=proDetails.html?type=xingzuo&id='+ringList[i].number+'>'+
+					'<img src='+ringList[i].banner[0]+'>'+
+					'<p>'+ringList[i].numberName+'</p>'+
+					'<p>'+ringList[i].number+'</p>'+
+				'</a>'+
+			'</li>')
+		}
+	</script>
+</body>
+</html>

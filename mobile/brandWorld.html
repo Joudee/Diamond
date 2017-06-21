@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+	<meta name="format-detection" content="telephone=no" />  
+    <meta name="format-detection" content="email=no" />
+	<title>品牌世界</title>
+	<link rel="stylesheet" href="../css/mobile.css">
+	<link rel="stylesheet" href="../css/swiper.css">
+	<link rel="stylesheet" href="../font/iconfont.css">
+</head>
+<body>
+	<header>
+		<div class="header-container">
+			<a href="index.html"><img src="../images/logo.png"></a>
+			<div class="nav-Bt">
+				<div></div>
+				<div></div>
+				<div></div>
+			</div>
+		</div>
+		<ul class='nav'>
+			<li>
+				<a href='products.html'>
+					<span>珠宝</span>
+					<i class="iconfont icon-icon07"></i>
+				</a>
+			</li>
+			<li>
+				<a href='customization.html'>
+					<span>祖母绿定制</span>
+					<i class="iconfont icon-icon07"></i>
+				</a>
+			</li>
+			<li>
+				<a href='brandWorld.html'>
+					<span>品牌世界</span>
+					<i class="iconfont icon-icon07"></i>
+				</a>
+			</li>
+			<li>
+				<a href='aboutus.html'>
+					<span>联系我们</span>
+					<i class="iconfont icon-icon07"></i>
+				</a>
+			</li>
+		</ul>
+		<div class="header-bg"></div>
+	</header>
+
+	<div class="brandWorld">
+		<h1>品牌世界</h1>
+		<ul class="title">
+			<li><a href='company.html'>公司梗概</a></li>
+			<li><a href='aboutus.html'>创始人简介</a></li>
+			<li><a href='brandFocus.html'>品牌聚焦</a></li>
+		</ul>
+		<ul class="link">
+			<li style="background: url(../images/barndWorld/brand1.png) center"><a href='company.html'>公司梗概</a></li>
+			<li style="background: url(../images/barndWorld/brand2.png) center"><a href='aboutus.html'>创始人简介</a></li>
+			<li style="background: url(../images/barndWorld/brand3.png) center"><a href='brandFocus.html'>品牌聚焦</a></li>
+		</ul>
+	</div>
+	
+	<footer>
+		<ul>
+			<li><a href='products.html'>珠宝</a></li>
+			<li><a href='customization.html'>祖母绿定制</a></li>
+			<li><a href='brandWorld.html'>品牌世界</a></li>
+			<li><a href='aboutus.html'>联系我们</a></li>
+			<li class="toTopBt"><a><i class="iconfont icon-jiantou-copy"></i><span>回到页顶</span></a></li>
+		</ul>
+	</footer>
+
+	<script src='../js/jQuery.min.js'></script>
+	<script src='../js/jquery.mobile.min.js'></script>
+	<script src="../js/swiper.js"></script>
+	<script type="text/javascript">
+		$('.nav-Bt').on('tap',function(){
+			$('.nav').addClass('nav-on');
+			$('.header-bg').fadeIn(100);
+			return false
+		})
+
+		$('body').on('tap',function(){
+			$('.nav').removeClass('nav-on');
+			$('.header-bg').fadeOut(100);
+		})
+
+		$('header').on('touchmove',function(e){
+			e.preventDefault();
+		})
+
+		$('.toTopBt').on('tap',function(){
+			$('body').animate({scrollTop:0});
+		})
+	</script>
+</body>
+</html>

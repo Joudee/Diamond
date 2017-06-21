@@ -1,0 +1,1656 @@
+* {
+    border: 0;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    font-family: PingFang SC, SimHei;
+    -webkit-tap-highlight-color: transparent;
+    font-weight: 300;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+::-webkit-scrollbar-thumb {
+    display: none;
+}
+
+::-webkit-scrollbar-track {
+    display: none;
+}
+
+::-webkit-scrollbar-button {
+    display: none;
+}
+
+::-webkit-scrollbar-track-piece {
+    display: none;
+}
+
+::-webkit-scrollbar-corner {
+    display: none;
+}
+
+ul,
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+@font-face {
+    font-family: Didot;
+    src: url('../font/Didot.ttf');
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    padding-top: 15vw;
+}
+
+.loading {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background: #fff;
+    padding-top: 56vw;
+}
+
+.loading img {
+    display: block;
+    width: 16%;
+    margin: 0 auto 0 auto;
+}
+
+.loading p {
+    position: absolute;
+    bottom: 22vw;
+    left: 0;
+    width: 100%;
+    font-size: 4vw;
+    color: #000;
+    font-family: Didot;
+    text-align: center;
+}
+
+
+/**首页**/
+
+header {
+    width: 100%;
+    height: 15vw;
+    background: #313131;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+header .nav {
+    width: 100%;
+    overflow: hidden;
+    background: #fff;
+    padding: 0 6vw;
+    position: fixed;
+    top: 15vw;
+    height: 0;
+    transition: all 0.4s ease-out;
+    -webkit-transition: all 0.4s ease-out;
+    -moz-transition: all 0.4s ease-out;
+}
+
+header .header-bg {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+}
+
+header .nav-on {
+    height: 97vw!important;
+    padding-bottom: 18vw;
+}
+
+header .nav li {
+    width: 100%;
+    overflow: hidden;
+    border-bottom: 1px solid #cccccc;
+}
+
+header .nav li a {
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    color: #cb8422;
+    padding: 7vw 0;
+    font-size: 4vw;
+    text-align: center;
+    position: relative;
+}
+
+header .nav li a i {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translate3d(0, -50%, 0);
+    -webkit-transform: translate3d(0, -50%, 0);
+    -moz-transform: translate3d(0, -50%, 0);
+    color: #a4a4a4;
+}
+
+.header-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    top: 0;
+    background: #fafafa;
+    padding: 0 3vw;
+}
+
+.header-container img {
+    display: block;
+    width: 14%;
+    float: left;
+    position: relative;
+    top: 50%;
+    transform: translate3d(0, -50%, 0);
+    -webkit-transform: translate3d(0, -50%, 0);
+    -moz-transform: translate3d(0, -50%, 0);
+}
+
+.header-container .nav-Bt {
+    width: 5vw;
+    overflow: hidden;
+    float: right;
+    position: relative;
+    top: 50%;
+    transform: translate3d(0, -50%, 0);
+    -webkit-transform: translate3d(0, -50%, 0);
+    -moz-transform: translate3d(0, -50%, 0);
+}
+
+.header-container .nav-Bt div {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: #5d5d5d;
+    margin-bottom: 2vw;
+}
+
+.header-container .nav-Bt div:last-child {
+    margin-bottom: 0;
+}
+
+.swiper-container {
+    width: 100%;
+    height: 61vw;
+    overflow: hidden;
+}
+
+.swiper-container .swiper-slide {
+    background-size: cover!important;
+    position: relative;
+}
+
+.swiper-container .swiper-slide p {
+    text-align: center;
+    font-size: 4vw;
+    color: #fff;
+    position: absolute;
+    bottom: 10vw;
+    width: 100%;
+    font-family: Didot;
+}
+
+.swiper-container .swiper-slide .homeHref {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+}
+
+.swiper-container .swiper-pagination-bullet {
+    background: #cccccc;
+    opacity: 0.4;
+}
+
+.swiper-container .swiper-pagination-bullet-active {
+    opacity: 1;
+}
+
+.describe {
+    width: 100%;
+    overflow: hidden;
+    background: #f4f4f4;
+    color: #000;
+    text-align: center;
+    padding: 7vw 8vw;
+}
+
+.describe h1 {
+    width: 100%;
+    overflow: hidden;
+    font-size: 4vw;
+    line-height: 1;
+    margin-bottom: 6vw;
+    font-weight: 300;
+}
+
+.describe p {
+    width: 100%;
+    overflow: hidden;
+    line-height: 1.5;
+    font-size: 3vw;
+    font-weight: 300;
+    font-family: Didot;
+}
+
+.brand-des {
+    width: 100%;
+    overflow: hidden;
+    background: #fff;
+    padding: 7vw 8vw 15vw 8vw;
+    text-align: center;
+}
+
+.brand-des img {
+    display: block;
+    width: 6vw;
+    margin: 0 auto 8vw auto;
+}
+
+.brand-des p {
+    width: 100%;
+    overflow: hidden;
+    line-height: 1.5;
+    font-size: 3vw;
+    font-weight: 300;
+}
+
+.introduce {
+    width: 100%;
+    overflow: hidden;
+}
+
+.introduce .title {
+    width: 100%;
+    overflow: hidden;
+    font-size: 5vw;
+    margin-bottom: 6vw;
+    text-align: center;
+}
+
+.introduce .des {
+    width: 100%;
+    height: 53vw;
+    position: relative;
+    background-size: cover!important;
+}
+
+.introduce .des div {
+    width: 50%;
+    height: 100%;
+    text-align: center;
+}
+
+.introduce .des div p {
+    width: 100%;
+    overflow: hidden;
+    line-height: 1;
+    color: #fff;
+    font-size: 3vw;
+    font-family: Didot;
+}
+
+.introduce .des div p:nth-child(1) {
+    font-size: 4vw;
+    padding-top: 16vw;
+    margin: 0 0 5vw 0;
+    font-weight: 400;
+}
+
+.introduce .des div p:nth-child(2) {
+    margin-bottom: 5vw;
+}
+
+.introduce .des a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.introduce .des div span {
+    font-size: 3vw;
+    color: #e7b96c;
+    text-decoration: underline;
+}
+
+.introduce .des .right {
+    float: right;
+}
+
+.introduce .text {
+    width: 100%;
+    overflow: hidden;
+    line-height: 1.5;
+    font-size: 3vw;
+    color: #000;
+    padding: 8vw 9vw;
+    text-align: center;
+}
+
+.introduce .display {
+    width: 100%;
+    overflow: hidden;
+    padding: 0 4vw;
+    margin-bottom: 9vw;
+    height: 53vw;
+    display: block;
+}
+
+.introduce .brand-intro {
+    margin-bottom: 0;
+    display: block;
+}
+
+.introduce .brand-intro div {
+    background-size: cover!important;
+}
+
+.introduce .display div {
+    width: calc((100% - 2vw)/2);
+    display: block;
+    float: left;
+    height: 100%;
+    background: #f4f4f4;
+    position: relative;
+}
+
+.introduce .display div img {
+    display: block;
+    width: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+}
+
+.introduce .display div:nth-child(2) {
+    float: right;
+}
+
+.line {
+    width: calc(100% - 8vw);
+    height: 1px;
+    background: #ccc;
+    margin: 0 auto 8vw auto;
+}
+
+footer {
+    width: 100%;
+    overflow: hidden;
+    background: #f8f8f8;
+    padding: 7vw 0;
+}
+
+footer ul,
+footer li {
+    width: 100%;
+    overflow: hidden;
+}
+
+footer li a {
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    padding: 7vw 0;
+    text-align: center;
+    color: #0d0c0c;
+    font-size: 4vw;
+    text-align: center;
+}
+
+footer li a i {
+    margin-bottom: 8px;
+}
+
+footer li a i,
+footer li a span {
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    line-height: 1;
+    color: #c89c5f;
+}
+
+
+/**产品列表**/
+
+.product-name {
+    width: 100%;
+    overflow: hidden;
+    padding: 8vw 0;
+    text-align: center;
+    color: #313131;
+    font-size: 6vw;
+}
+
+.product-nav {
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    border-bottom: 1px solid #dddddd;
+    border-top: 1px solid #dddddd;
+}
+
+.product-nav ul {
+    width: 175vw;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.product-nav ul li {
+    width: 25vw;
+    overflow: hidden;
+    padding: 3vw 0;
+    text-align: center;
+    font-size: 4vw;
+    color: #313131;
+    float: left;
+}
+
+.product-nav ul .on {
+    color: #c89c5f;
+}
+
+.product-list {
+    width: 100%;
+    overflow: hidden;
+    padding: 4vw;
+}
+
+.product-list li {
+    width: 44vw;
+    height: 53vw;
+    float: left;
+    background: #f4f4f4;
+    margin-bottom: 4vw;
+}
+
+.product-list li:nth-child(2n) {
+    margin-left: 4vw;
+}
+
+.product-list li a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.product-list li a .pro-logo {
+    display: block;
+    width: 9vw;
+    position: absolute;
+    top: 3vw;
+    left: 3vw;
+}
+
+.product-list li a .pro-details {
+    display: block;
+    height: 40%;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    -webkit-transform: translate3d(-50%, -50%, 0);
+    -moz-transform: translate3d(-50%, -50%, 0);
+}
+
+.product-list li a p{
+    position: absolute;
+    width: 100%;
+    bottom: 4vw;
+    left: 0;
+    text-align: center;
+    color: #000;
+    font-size: 3vw;
+}
+
+
+/**产品详情**/
+
+.pro-swiper-container {
+    width: 100%;
+    height: 73vw;
+    overflow: hidden;
+    position: relative;
+}
+
+.pro-swiper-container .swiper-slide {
+    background-size: cover!important;
+    background-color: #f4f4f4;
+    position: relative;
+}
+
+.pro-swiper-container .swiper-slide img {
+    display: block;
+    height: 50%;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+}
+
+.pro-swiper-container .swiper-pagination-bullet {
+    background: #cccccc;
+    opacity: 0.4;
+    margin: 0 3vw!important;
+}
+
+.pro-swiper-container .swiper-pagination-bullet-active {
+    opacity: 1;
+}
+
+.pro-price {
+    width: 100%;
+    overflow: hidden;
+    padding: 8vw 0 21vw 0;
+    text-align: center;
+}
+
+.pro-price h1 {
+    font-size: 5vw;
+    color: #000;
+    margin: 0 auto 4vw auto;
+    letter-spacing: 1.5px;
+    width: 88vw;
+    line-height: 1.5;
+}
+
+.pro-price h2 {
+    font-size: 3vw;
+    color: #a4a4a4;
+    margin-bottom: 9vw;
+}
+
+.pro-price h3 {
+    font-size: 4vw;
+    color: #856135;
+    margin-bottom: 2vw;
+    letter-spacing: 2px;
+}
+
+.pro-price h4 {
+    font-size: 3vw;
+    color: #a4a4a4;
+    margin-bottom: 9vw;
+}
+
+.pro-price .buy-bt {
+    width: 46vw;
+    overflow: hidden;
+    padding: 3vw 0;
+    color: #fff;
+    font-size: 4vw;
+    background-color: #e7a74f;
+    margin: 0 auto;
+    display: block;
+}
+
+.pro-size {
+    width: 88vw;
+    overflow: hidden;
+    margin: 0 auto;
+    text-align: center;
+    padding: 6vw 0;
+    border-bottom: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+}
+
+.pro-size h1 {
+    font-size: 4vw;
+    color: #000;
+    margin-bottom: 5vw;
+    line-height: 1;
+}
+
+.pro-size p {
+    font-size: 3vw;
+    color: #c89c5f;
+    line-height: 1;
+    margin-top: 4vw;
+}
+
+.pro-exhibit {
+    width: 100%;
+    overflow: hidden;
+    text-align: center;
+    padding-top: 6vw;
+}
+
+.pro-exhibit h1 {
+    line-height: 1;
+    font-size: 4vw;
+    margin-bottom: 6vw;
+}
+
+.pro-exhibit .pro-exhibit-box {
+    width: 100%;
+    overflow: hidden;
+    font-size: 3vw;
+    padding-bottom: 8vw;
+}
+
+.pro-exhibit .pro-exhibit-img {
+    margin-bottom: 6vw;
+    width: 100%;
+    overflow: hidden;
+    height: 61vw;
+    background-size: cover!important;
+}
+
+.pro-exhibit .pro-exhibit-box h2 {
+    color: #000;
+}
+
+.pro-exhibit p {
+    width: 58vw;
+    color: #838383;
+    line-height: 1.5;
+    margin: 0 auto;
+    font-size: 3vw;
+    margin-bottom: 1vw;
+}
+
+.pro-exhibit p:nth-child(3) {
+    margin-bottom: 6vw;
+}
+
+.pro-exhibit .pro-exhibit-box .line {
+    width: 12vw;
+    height: 1px;
+    background: #e7b96c;
+    margin: 4vw auto 4vw auto;
+}
+
+.allpro-swiper {
+    width: 100%;
+    overflow: hidden;
+}
+
+.allpro-swiper h1 {
+    width: 88vw;
+    margin: 0 auto;
+    line-height: 1;
+    font-size: 4vw;
+    padding: 6vw 0;
+    text-align: center;
+    border-top: 1px solid #ccc;
+}
+
+.allpro-swiper .allpro-swiper-container {
+    width: 100%;
+    height: 60vw;
+    position: relative;
+}
+
+.allpro-swiper-container a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.allpro-swiper .swiper-slide {
+    position: relative;
+    background: #f4f4f4;
+}
+
+.allpro-swiper .swiper-slide img {
+    display: block;
+    width: 40%;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+}
+
+.allpro-swiper .swiper-slide p {
+    text-align: center;
+    font-size: 2vw;
+    color: #000;
+    position: absolute;
+    bottom: 3vw;
+    left: 0;
+    width: 100%;
+}
+
+.allpro-swiper .all-pro-bt {
+    display: inline-block;
+    width: auto;
+    line-height: 1;
+    margin: 6vw 0;
+    color: #c89c5f;
+    border-top: 1px solid #c89c5f;
+    border-bottom: 1px solid #c89c5f;
+    padding: 1.4vw 1vw;
+    position: relative;
+    left: 50%;
+    transform: translate3d(-50%, 0, 0);
+    -webkit-transform: translate3d(-50%, 0, 0);
+    -moz-transform: translate3d(-50%, 0, 0);
+}
+
+.abs-user {
+    width: 24vw;
+    height: 24vw;
+    margin: 6vw auto;
+    border-radius: 100%;
+    background: #ccc;
+    background-size: cover!important;
+}
+
+.abs-user-info {
+    width: 100%;
+    overflow: hidden;
+    text-align: center;
+}
+
+.abs-user-info h1 {
+    font-size: 5vw;
+    color: #000;
+    margin-bottom: 5vw;
+}
+
+.abs-user-info h2 {
+    font-size: 4vw;
+    color: #666;
+    margin-bottom: 5vw;
+}
+
+.abs-user-info h3 {
+    font-size: 2vw;
+    color: #c89c5f;
+    width: 88vw;
+    margin: 0 auto;
+    border-bottom: 1px solid #ccc;
+    padding: 0 10vw 4vw 10vw;
+}
+
+.abs-user-info-details {
+    width: 88vw;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+}
+
+.abs-user-info-details li {
+    width: 100%;
+    overflow: hidden;
+    padding: 4vw 0;
+    border-bottom: 1px solid #ccc;
+    position: relative;
+    font-size: 4vw;
+    line-height: 4vw;
+}
+
+.abs-user-info-details li span {
+    float: left;
+    color: #d99331;
+}
+
+.abs-user-info-details li i {
+    float: right;
+    color: #808080;
+    transition: all 0.2s ease-out;
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+}
+
+.abs-user-info-details li p {
+    width: 100%;
+    overflow: hidden;
+    line-height: 1.5;
+    color: #4a4a4a;
+    font-size: 3vw;
+    height: 0;
+}
+
+.abs-user-info-details li a {
+    position: absolute;
+    bottom: 4vw;
+    right: 0;
+    color: #cb9922;
+    line-height: 1.5;
+    font-size: 3vw;
+}
+
+.abs-user-info-details .on i {
+    transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+}
+
+.customization-abs-user-info-details li a {
+    display: none;
+}
+
+.abs-user-info-details .on a {
+    display: block;
+}
+
+.abs-user-info-details .on p {
+    padding-top: 4vw;
+    height: auto!important;
+}
+
+
+/**达碧元专题**/
+
+.dblBanner {
+    width: 100%;
+    height: 61vw;
+    position: relative;
+    background-size: cover!important;
+}
+
+.dblBanner p {
+    width: 100%;
+    text-align: center;
+    font-size: 4vw;
+    color: #fff;
+    position: absolute;
+    bottom: 5vw;
+    left: 0;
+}
+
+.dbl-des {
+    width: 100%;
+    overflow: hidden;
+    padding: 6vw 0 11vw 0;
+}
+
+.dbl-des h1 {
+    font-size: 4vw;
+    color: #000;
+    text-align: center;
+}
+
+.dbl-des img {
+    display: block;
+    margin: 6vw auto;
+    width: 12vw;
+}
+
+.dbl-des p {
+    color: #838383;
+    width: 88vw;
+    line-height: 1.5;
+    font-size: 4vw;
+    margin: 0 auto 9vw auto;
+}
+
+.dbl-des a {
+    text-align: center;
+    font-size: 5vw;
+    color: #fff;
+    display: block;
+    width: 46vw;
+    padding: 3vw 0;
+    overflow: hidden;
+    line-height: 1;
+    background: #e7a74f;
+    margin: 0 auto;
+}
+
+.dbl-pro {
+    width: 100%;
+    overflow: hidden;
+    background: #f4f4f4;
+    padding: 31vw 0 14vw 0;
+}
+
+.dbl-pro img {
+    display: block;
+    width: 30vw;
+    margin: 0 auto;
+}
+
+.dbl-pro-details {
+    width: 100%;
+    overflow: hidden;
+    padding-top: 9vw;
+}
+
+.dbl-pro-details h1 {
+    text-align: center;
+    font-size: 4vw;
+    color: #000;
+}
+
+.dbl-pro-details-content {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    padding-top: 7vw;
+}
+
+.dbl-pro-details-content .show {
+    display: block;
+    width: 32vw;
+}
+
+.dbl-pro-details-content .showright {
+    float: right;
+    margin-right: 5vw;
+}
+
+.dbl-pro-details-content .showleft {
+    float: left;
+    margin-left: 5vw;
+}
+
+.dbl-pro-details-content .displayBig {
+    width: 50vw;
+    height: 66vw;
+    border: 4px solid #fff;
+    background-size: cover!important;
+    position: relative;
+    z-index: 1;
+    margin-top: 3vw;
+}
+
+.dbl-pro-details-content .left img {
+    display: block;
+    position: relative;
+    top: 15vw;
+    left: -3vw;
+    width: 7vw;
+}
+
+.dbl-pro-details-content .right img {
+    display: block;
+    position: absolute;
+    top: 15vw;
+    right: -3vw;
+    width: 7vw;
+}
+
+.dbl-pro-details-content .displaySmall {
+    width: 45vw;
+    height: 56vw;
+    border: 4px solid #f4f4f4;
+    background-size: cover!important;
+    margin-top: -47vw;
+    position: relative;
+    z-index: 0;
+}
+
+.dbl-pro-details-content .right {
+    float: right;
+    margin-right: 5vw;
+}
+
+.dbl-pro-details-content .left {
+    float: left;
+    margin-left: 5vw;
+}
+
+.dbl-pro-details-content p {
+    clear: both;
+    text-align: center;
+    font-size: 3vw;
+    color: #838383;
+    width: 80vw;
+    margin: 0 auto;
+    padding: 14vw 0 12vw 0;
+    line-height: 1.5;
+}
+
+.dbl-authenticate {
+    width: 100%;
+    overflow: hidden;
+}
+
+.dbl-authenticate h1 {
+    text-align: center;
+    color: #000;
+    font-size: 4vw;
+    margin-bottom: 11vw;
+}
+
+.dbl-authenticate img {
+    display: block;
+    width: 53vw;
+    margin: 0 auto;
+    transform: translate3d(20%, 0, 0);
+    -webkit-transform: translate3d(20%, 0, 0);
+    -moz-transform: translate3d(20%, 0, 0);
+    position: relative;
+    z-index: 0;
+}
+
+.dbl-authenticate p {
+    width: 100%;
+    padding-left: 12vw;
+    color: #000;
+    font-size: 3vw;
+    line-height: 2;
+    margin-top: -4vw;
+    position: relative;
+    z-index: 1;
+    padding-bottom: 10vw;
+}
+
+
+/**证书**/
+
+.certificate {
+    width: 100%;
+    overflow: hidden;
+    text-align: center;
+    padding-top: 8vw;
+}
+
+.certificate h1 {
+    font-size: 4vw;
+    color: #cb8422;
+    margin-bottom: 6vw;
+}
+
+.certificate p {
+    width: 78vw;
+    font-size: 3vw;
+    color: #000;
+    line-height: 1.5;
+    margin: 0 auto 4vw auto;
+}
+
+.certificate img {
+    display: block;
+    width: 88vw;
+    margin: 0 auto 5vw auto;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+}
+
+.certificate img:last-child {
+    margin-bottom: 26vw;
+}
+
+
+/**品牌世界**/
+
+.brandWorld {
+    width: 100%;
+    overflow: hidden;
+    padding-top: 6vw;
+}
+
+.brandWorld h1 {
+    font-size: 4vw;
+    color: #cb8422;
+    margin-bottom: 4vw;
+    text-align: center;
+}
+
+.brandWorld .title {
+    width: 88vw;
+    overflow: hidden;
+    margin: 0 auto 5vw auto;
+    border-top: 1px solid #ccc;
+}
+
+.brandWorld .title li {
+    width: 33.33%;
+    overflow: hidden;
+    float: left;
+}
+
+.brandWorld .title li a {
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    padding: 3vw 0;
+    text-align: center;
+    color: #666;
+    font-size: 3vw;
+}
+
+.brandWorld .link {
+    width: 88vw;
+    overflow: hidden;
+    margin: 0 auto 5vw auto;
+}
+
+.brandWorld .link li {
+    width: 100%;
+    height: 32vw;
+    line-height: 32vw;
+    overflow: hidden;
+    background-size: cover!important;
+    margin-bottom: 7vw;
+}
+
+.brandWorld .link li:last-child {
+    margin-bottom: 16vw;
+}
+
+.brandWorld .link li a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    font-size: 4vw;
+    color: #fff;
+}
+
+
+/**公司梗概**/
+
+.company {
+    width: 100%;
+    overflow: hidden;
+    background-size: cover!important;
+    padding: 0 4vw;
+}
+
+.company-img {
+    width: 100%;
+    height: 32vw;
+    margin-bottom: 9vw;
+}
+
+.company-info {
+    width: 100%;
+    overflow: hidden;
+    border-top: 1px solid #d5d5d5;
+    border-left: 1px solid #d5d5d5;
+    margin-bottom: 11vw;
+}
+
+.company-info li {
+    width: 100%;
+    overflow: hidden;
+    font-size: 3vw;
+    color: #000;
+    position: relative;
+    background: #f8f8f8;
+    border-right: 1px solid #d5d5d5;
+    border-bottom: 1px solid #d5d5d5;
+}
+
+.company-info li p {
+    padding: 4vw 6vw;
+    width: calc(100% - 20vw);
+    width: -webkit-calc(100% - 20vw);
+    width: -moz-calc(100% - 20vw);
+    overflow: hidden;
+    float: right;
+    background: #fff;
+    line-height: 1.5;
+}
+
+.company-info li span {
+    display: block;
+    width: 20vw;
+    overflow: hidden;
+    line-height: 1;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate3d(0, -50%, 0);
+    -webkit-transform: translate3d(0, -50%, 0);
+    -moz-transform: translate3d(0, -50%, 0);
+    text-align: center;
+}
+
+.aboutus li span {
+    display: block;
+    border-left: 4px solid #d99331;
+    padding-left: 8px;
+}
+
+
+/**祖母绿介绍**/
+
+.emerald {
+    width: 100%;
+    overflow: hidden;
+    padding-top: 5vw;
+}
+
+.emerald h1 {
+    text-align: center;
+    font-size: 5vw;
+    color: #000;
+}
+
+.emerald-title-line {
+    display: block;
+    width: 20vw;
+    margin: 3vw auto;
+}
+
+.emerald-nav {
+    width: 88vw;
+    overflow: hidden;
+    margin: 0 auto;
+    border-top: 1px solid #dcdcdc;
+}
+
+.emerald-nav li {
+    float: left;
+    width: 20%;
+    height: 11vw;
+    overflow: hidden;
+    font-size: 3vw;
+    text-align: center;
+    line-height: 11vw;
+    position: relative;
+    cursor: pointer;
+    color: #cb8422;
+}
+
+.emerald-nav li span {
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.emerald-nav-on {
+    position: fixed;
+    left: 6vw;
+    top: 15vw;
+    z-index: 10;
+    background: #fff;
+    border-top: 0!important;
+}
+
+.emerald .emerald-describe {
+    width: 100%;
+    overflow: hidden;
+    padding-top: 8vw;
+}
+
+.emerald .emerald-describe h2 {
+    text-align: center;
+    line-height: 1;
+    color: #000;
+    font-size: 4vw;
+}
+
+.emerald .emerald-describe .line {
+    width: 20vw;
+    height: 1px;
+    background: #cb8422;
+    margin: 4vw auto;
+}
+
+.emerald .emerald-describe p {
+    width: 78vw;
+    margin: 0 auto 8vw auto;
+    text-align: justify;
+    line-height: 1.75;
+    font-size: 3.5vw;
+    text-indent: 1.5em;
+    color: #000;
+}
+
+.emerald .emerald-describe .color1 {
+    display: block;
+    width: 25vw;
+    margin: 11vw auto;
+}
+
+.emerald .emerald-describe .color2 {
+    display: block;
+    width: 78vw;
+    margin: 11vw auto;
+}
+
+.emerald-title-line1 {
+    display: block;
+    width: 8vw;
+    margin: 0 auto 10vw auto;
+}
+
+.emerald-describe-pro {
+    width: 78vw;
+    overflow: hidden;
+    margin: 10vw auto;
+}
+
+.emerald-describe-pro img {
+    display: block;
+    width: 100%;
+    margin-bottom: 4vw;
+}
+
+.emerald-describe-pro p {
+    text-align: center!important;
+    font-size: 3vw!important;
+    font-weight: 100;
+    margin-bottom: 0!important;
+}
+
+.pro-big-show {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    background: rgba(0, 0, 0, 0.7);
+    display: none;
+}
+
+.pro-big-show img {
+    display: block;
+    width: 100%;
+    position: relative;
+    top: 50%;
+    transform: translate3d(0, -50%, 0);
+    -webkit-transform: translate3d(0, -50%, 0);
+    -moz-transform: translate3d(0, -50%, 0);
+}
+
+.brandFocus {
+    width: 92vw;
+    margin: 0 auto 66vw auto;
+    background-size: cover!important;
+    height: 40vw;
+    overflow: hidden;
+}
+
+.brandFocus div {
+    width: 50%;
+    overflow: hidden;
+    text-align: center;
+    top: 50%;
+    position: relative;
+    transform: translate3d(0, -50%, 0);
+    -webkit-transform: translate3d(0, -50%, 0);
+    -moz-transform: translate3d(0, -50%, 0);
+}
+
+.brandFocus div h1 {
+    font-size: 4vw;
+    color: #fff;
+    margin-bottom: 4vw;
+    line-height: 1;
+}
+
+.brandFocus div h2 {
+    font-size: 3vw;
+    color: #fff;
+    margin-bottom: 4.5vw;
+    line-height: 1;
+    font-family: Didot;
+}
+
+.brandFocus a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.brandFocus div span {
+    color: #cb8422;
+    font-size: 3vw;
+    text-decoration: underline;
+}
+
+.contact {
+    width: 88vw;
+    overflow: hidden;
+    margin: 4vw auto 18vw auto;
+    position: relative;
+}
+
+.contact div {
+    width: 40%;
+    float: left;
+    overflow: hidden;
+    margin-bottom: 5vw;
+}
+
+.contact div i {
+    font-size: 8vw;
+    color: #d99331;
+    margin-bottom: 3vw;
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    text-align: left;
+}
+
+.contact div h1 {
+    font-size: 4vw;
+    color: #4a4a4a;
+    margin-bottom: 3vw;
+}
+
+.contact div h2 {
+    font-size: 3vw;
+    color: #4a4a4a;
+}
+
+.contact .TDcode {
+    display: block;
+    width: 18vw;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.customization-contact {
+    margin: 4vw auto 0 auto!important;
+    border-bottom: 1px solid #ccc;
+}
+
+.customization-flow {
+    width: 88vw;
+    overflow: hidden;
+    margin: 9vw auto 15vw auto;
+}
+
+.customization-flow img {
+    display: block;
+    width: 100%;
+}
+
+.customization-flow i {
+    color: #cb8422;
+    font-size: 6vw;
+    float: right;
+}
+
+.customization-flow-big {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    display: none;
+}
+
+.customization-flow-big img {
+    display: block;
+    width: 100%;
+    position: relative;
+    top: 50%;
+    transform: translate3d(0, -50%, 0);
+    -webkit-transform: translate3d(0, -50%, 0);
+    -moz-transform: translate3d(0, -50%, 0);
+    background: #fff;
+}
+
+.pros-swiper a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.big-TDcode {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+}
+
+.big-TDcode img {
+    display: block;
+    width: 100%;
+    position: relative;
+    top: 50%;
+    transform: translate3d(0, -50%, 0);
+    -webkit-transform: translate3d(0, -50%, 0);
+    -moz-transform: translate3d(0, -50%, 0);
+}
+
+/**星座专题**/
+.constell-banner{
+    width: 100%;
+    height: 60vw;
+    overflow: hidden;
+    background-size: cover!important;
+    position: relative;
+}
+
+.constell-banner p{
+    width: 100%;
+    overflow: hidden;
+    text-align: center;
+    line-height: 1.5;
+    color: #fff;
+    font-size: 4vw;
+    font-family: Didot;
+    position: absolute;
+    left: 0;
+    bottom: 6vw;
+}
+
+.constell-title{
+    width: 100%;
+    overflow: hidden;
+    padding: 10vw 0;
+    text-align: center;
+    background: #070c18;
+}
+
+.constell-title h1{
+    color: #fff;
+    font-size: 4vw;
+    margin-bottom: 4vw;
+    line-height: 1;
+}
+
+.constell-title img{
+    display: block;
+    width: 15vw;
+    margin: 0 auto;
+}
+
+.constell-des{
+    width: 100%;
+    overflow: hidden;
+    padding: 8vw 6vw;
+    color: #fff;
+    background: #282c36;
+    font-size: 3.5vw;
+    line-height: 2;
+    text-indent: 2em;
+    text-align: justify;
+}
+
+.constell-roder{
+    display: block;
+    width: 46vw;
+    height: 9vw;
+    background: #e7a74f;
+    color: #fff;
+    font-size: 4vw;
+    text-align: center;
+    line-height: 9vw;
+    margin: 12vw auto 18vw auto;
+}
+
+.constell-list{
+    width: 100%;
+    overflow: hidden;
+    padding: 0 4vw 25vw 4vw;
+}
+
+.constell-list li{
+    width: 42vw;
+    height: 54vw;
+    float: left;
+    border: 1px solid #9f8357;
+    position: relative;
+    margin-bottom: 4vw;
+}
+
+.constell-list li:nth-child(2n){
+    float: right;
+}
+
+.constell-list li a{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.constell-list li a img{
+    display: block;
+    width: 26vw;
+    position: relative;
+    top: 40%;
+    left: 50%;
+    transform: translate3d(-50%,-50%,0);
+}
+
+.constell-list li a p{
+    color: #9f8357;
+    text-align: center;
+    width: 100%;
+    line-height: 1;
+    position: absolute;
+    left: 0;
+}
+
+.constell-list li a p:nth-child(2){
+    bottom: 10vw;
+    font-size: 3vw;
+}
+
+.constell-list li a p:nth-child(3){
+    bottom: 4vw;
+    font-size: 2vw;
+}

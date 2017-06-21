@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+	<meta name="format-detection" content="telephone=no" />  
+    <meta name="format-detection" content="email=no" />
+	<title>产品列表</title>
+	<link rel="stylesheet" href="../css/mobile.css">
+	<link rel="stylesheet" href="../css/swiper.css">
+	<link rel="stylesheet" href="../font/iconfont.css">
+</head>
+<body>
+	<header>
+		<div class="header-container">
+			<a href="index.html"><img src="../images/logo.png"></a>
+			<div class="nav-Bt">
+				<div></div>
+				<div></div>
+				<div></div>
+			</div>
+		</div>
+		<ul class='nav'>
+			<li>
+				<a href='products.html'>
+					<span>珠宝</span>
+					<i class="iconfont icon-icon07"></i>
+				</a>
+			</li>
+			<li>
+				<a href='customization.html'>
+					<span>祖母绿定制</span>
+					<i class="iconfont icon-icon07"></i>
+				</a>
+			</li>
+			<li>
+				<a href='brandWorld.html'>
+					<span>品牌世界</span>
+					<i class="iconfont icon-icon07"></i>
+				</a>
+			</li>
+			<li>
+				<a href='aboutus.html'>
+					<span>联系我们</span>
+					<i class="iconfont icon-icon07"></i>
+				</a>
+			</li>
+		</ul>
+		<div class="header-bg"></div>
+	</header>
+	<div class="swiper-container pros-swiper">
+	    <div class="swiper-wrapper">
+	        <div class="swiper-slide" style="background: url(../images/home/1qsasdas.png) center">
+	        	<a href='aboutuEmerald.html' class="brandFocus">
+	        		<div>
+						<h1>祖母绿介绍</h1>
+						<h2>Emerald introduction</h2>
+						<span>探索更多</span>
+					</div>
+	        	</a>
+	        </div>
+	    </div>
+	    <div class="swiper-pagination"></div>
+	</div>
+	<h1 class='product-name'>全部</h1>
+	<div class='product-nav'>
+		<ul>
+			<li class='on' data-type='all'>全部</li>
+			<li data-type='xingzuo'>系列</li>
+			<li data-type='ring'>戒指</li>
+			<li data-type='xianglian'>项链</li>
+			<li data-type='erding'>耳钉</li>
+			<li data-type='shoulian'>手链</li>
+			<li data-type='luoshi'>裸石</li>
+		</ul>
+	</div>
+	<ul class='product-list'>
+		<li>
+			<a>
+				<img src="../images/logo.png" class='pro-logo'>
+			</a>
+		</li>
+		<li>
+			<a>
+				<img src="../images/logo.png" class='pro-logo'>
+			</a>
+		</li>
+	</ul>
+	
+
+	<script src='../js/jQuery.min.js'></script>
+	<script src='../js/jquery.mobile.min.js'></script>
+	<script src="../js/swiper.js"></script>
+	<script src="../json/products.js"></script>
+	<script src="../js/underscore.js"></script>
+	<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+	<script type="text/javascript">
+		var productNavLi = $(".product-nav ul li");
+		var proObj = getJson();
+		var productList = $('.product-list');
+
+		$('.nav-Bt').on('tap',function(){
+			$('.nav').addClass('nav-on');
+			$('.header-bg').fadeIn(100);
+			return false
+		})
+
+		$('body').on('tap',function(){
+			$('.nav').removeClass('nav-on');
+			$('.header-bg').fadeOut(100);
+		})
+
+		$('header').on('touchmove',function(e){
+			e.preventDefault();
+		})
+
+		productNavLi.on('tap',function(){
+			productNavLi.removeClass('on');
+			$(this).addClass('on');
+			$(".product-name").html($(this).html());
+			productList.empty();
+			setList($(this).attr('data-type'));
+			if($(this).attr('data-type')=='all'){
+				initAll();
+			}
+		})
+
+		var arg = resolveURL();
+		initAll();
+		if(arg.type){
+			setList(arg.type);
+			$(".product-nav ul li").removeClass('on');
+			$(".product-nav ul li").each(function(){
+				if($(this).attr('data-type')==arg.type){
+					$(this).addClass('on');
+					$(".product-name").html($(this).html());
+				}
+			})
+		}
+
+		function initAll(){
+			productList.empty();
+			for(var key in proObj){
+				productList.append("<li>"+
+					"<a href=proDetails.html?type="+key+"&id="+proObj[key][0].number+"><img src='../images/pro_logo.png' class='pro-logo'>"+
+						"<img src="+proObj[key][0].banner[0]+" class='pro-details'>"+
+						"<p>*"+(proObj[key][0].numberName+' '+proObj[key][0].number)+"</p>"+
+					"</a>"+
+				"</li>")
+			}
+		}
+
+		function setList(type){
+			productList.empty();
+			var proList = proObj[type];
+			if(proList&&proList.length){
+				proList.map((v,k)=>{
+					productList.append("<li>"+
+						"<a href=proDetails.html?type="+type+"&id="+v.number+"><img src='../images/pro_logo.png' class='pro-logo'>"+
+							"<img src="+v.banner[0]+" class='pro-details'>"+
+							"<p>*"+(v.numberName+' '+v.number)+"</p>"+
+						"</a>"+
+					"</li>")
+				})
+			}
+		}
+
+		var mySwiper = new Swiper ('.swiper-container', {
+		    loop: true,
+		    pagination: '.swiper-pagination',
+		    autoplay : 5000,
+		    speed:1200
+		})
+
+		
+	</script>
+</body>
+</html>

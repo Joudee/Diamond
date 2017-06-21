@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+	<meta name="format-detection" content="telephone=no" />  
+    <meta name="format-detection" content="email=no" />
+	<title>公司梗概</title>
+	<link rel="stylesheet" href="../css/mobile.css">
+	<link rel="stylesheet" href="../css/swiper.css">
+	<link rel="stylesheet" href="../font/iconfont.css">
+</head>
+<body>
+	<header>
+		<div class="header-container">
+			<a href="index.html"><img src="../images/logo.png"></a>
+			<div class="nav-Bt">
+				<div></div>
+				<div></div>
+				<div></div>
+			</div>
+		</div>
+		<ul class='nav'>
+			<li>
+				<a href='products.html'>
+					<span>珠宝</span>
+					<i class="iconfont icon-icon07"></i>
+				</a>
+			</li>
+			<li>
+				<a href='customization.html'>
+					<span>祖母绿定制</span>
+					<i class="iconfont icon-icon07"></i>
+				</a>
+			</li>
+			<li>
+				<a href='brandWorld.html'>
+					<span>品牌世界</span>
+					<i class="iconfont icon-icon07"></i>
+				</a>
+			</li>
+			<li>
+				<a href='aboutus.html'>
+					<span>联系我们</span>
+					<i class="iconfont icon-icon07"></i>
+				</a>
+			</li>
+		</ul>
+		<div class="header-bg"></div>
+	</header>
+
+	<div class="brandWorld">
+		<h1>公司梗概</h1>
+		<ul class="title">
+			<li><a href='company.html'>公司梗概</a></li>
+			<li><a href='aboutus.html'>创始人简介</a></li>
+			<li><a href='brandFocus.html'>品牌聚焦</a></li>
+		</ul>
+		<div class="company">
+			<div class="company-img" style="background: url(../images/barndWorld/brand1.png) center"></div>
+			<ul class="company-info">
+				<li>
+					<span>创始人</span>
+					<p>As Zhou&nbsp;&nbsp;周砚池</p>
+				</li>
+				<li>
+					<span>成立时间</span>
+					<p>2014年</p>
+				</li>
+				<li>
+					<span>成立地点</span>
+					<p>哥伦比亚</p>
+				</li>
+				<li>
+					<span>主营业务</span>
+					<p>哥伦比亚祖母绿设计/出口<br/>哥伦比亚艺术品出口</p>
+				</li>
+				<li>
+					<span>团队信息</span>
+					<p>北京公司整体设计加工团队<br/>哥伦比亚公司祖母绿鉴别团队</p>
+				</li>
+			</ul>
+		</div>
+	</div>
+	
+	<footer>
+		<ul>
+			<li><a href='products.html'>珠宝</a></li>
+			<li><a href='customization.html'>祖母绿定制</a></li>
+			<li><a href='brandWorld.html'>品牌世界</a></li>
+			<li><a href='aboutus.html'>联系我们</a></li>
+			<li class="toTopBt"><a><i class="iconfont icon-jiantou-copy"></i><span>回到页顶</span></a></li>
+		</ul>
+	</footer>
+
+	<script src='../js/jQuery.min.js'></script>
+	<script src='../js/jquery.mobile.min.js'></script>
+	<script src="../js/swiper.js"></script>
+	<script type="text/javascript">
+		$('.nav-Bt').on('tap',function(){
+			$('.nav').addClass('nav-on');
+			$('.header-bg').fadeIn(100);
+			return false
+		})
+
+		$('body').on('tap',function(){
+			$('.nav').removeClass('nav-on');
+			$('.header-bg').fadeOut(100);
+		})
+
+		$('header').on('touchmove',function(e){
+			e.preventDefault();
+		})
+
+		$('.toTopBt').on('tap',function(){
+			$('body').animate({scrollTop:0});
+		})
+	</script>
+</body>
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+	<meta name="format-detection" content="telephone=no" />  
+    <meta name="format-detection" content="email=no" />
+	<title>祖母绿</title>
+	<link rel="stylesheet" href="../css/mobile.css">
+	<link rel="stylesheet" href="../css/swiper.css">
+	<link rel="stylesheet" href="../font/iconfont.css">
+</head>
+<body>
+	<header>
+		<div class="header-container">
+			<a href="index.html"><img src="../images/logo.png" class="preload"></a>
+			<div class="nav-Bt">
+				<div></div>
+				<div></div>
+				<div></div>
+			</div>
+		</div>
+		<ul class='nav'>
+			<li>
+				<a href='products.html'>
+					<span>珠宝</span>
+					<i class="iconfont icon-icon07"></i>
+				</a>
+			</li>
+			<li>
+				<a href='customization.html'>
+					<span>祖母绿定制</span>
+					<i class="iconfont icon-icon07"></i>
+				</a>
+			</li>
+			<li>
+				<a href='brandWorld.html'>
+					<span>品牌世界</span>
+					<i class="iconfont icon-icon07"></i>
+				</a>
+			</li>
+			<li>
+				<a href='aboutus.html'>
+					<span>联系我们</span>
+					<i class="iconfont icon-icon07"></i>
+				</a>
+			</li>
+		</ul>
+		<div class="header-bg"></div>
+	</header>
+	<div class="swiper-container">
+	    <div class="swiper-wrapper">
+	        <div class="swiper-slide" style="background: url(../images/home/banner1.png) center"><a class="homeHref" href="constellation.html"><p>星座祖母绿锁骨链</p></a></div>
+	        <div class="swiper-slide" style="background: url(../images/home/banner2.png) center"><a class="homeHref" href="dblSpecial.html"><p>TRAPICHE EMERALD SERIES</p></a></div>
+	    </div>
+	    <div class="swiper-pagination"></div>
+	</div>
+	<div class="describe">
+		<h1>独家定制，闪耀传奇</h1>
+		<p>ASU combines dazzling Columbia grandmother emerald with modern elegance design to achieve extraordinary jewelry art</p>
+	</div>
+	<div class="brand-des">
+		<img src="../images/ver-logo.png" class="preload">
+		<p>ASU融合耀眼的哥伦比亚祖母绿宝石与现代的优雅设计，成就出非凡的珠宝艺术</p>
+	</div>
+	<div class="introduce">
+		<div class="title">珠宝</div>
+		<div class="des" style="background: url(../images/home/zhubao.png) center">
+			<a href='products.html'>
+				<div>
+					<p>绽放臻美品质</p>
+					<p>Blossom into beauty</p>
+					<span>探索更多</span>
+				</div>
+			</a>
+		</div>
+		<p class="text">我们为珠宝注入天然原石的神秘魅力，以优雅流畅的造型凸显祖母绿的柔和之美</p>
+		<a class="display" href="products.html">
+			<div><img src='../images/ring/A1/banner.png' class="preload"/></div>
+			<div><img src='../images/ring/A4/banner1.png' class="preload"/></div>
+		</a>
+		<div class="line"></div>
+	</div>
+	<div class="introduce">
+		<div class="title">祖母绿定制</div>
+		<div class="des" style="background: url(../images/home/zumulv.png) center">
+			<a href='products.html'>
+				<div class="right">
+					<p>精挑细选的优雅</p>
+					<p>Refind elegence</p>
+					<span href='products.html'>探索更多</span>
+				</div>
+			</a>
+		</div>
+		<p class="text">经过精心挑选的祖母绿宝石，最终在珠宝师手中绽放它们最具魅力的神秘光芒</p>
+		<div class="line"></div>
+	</div>
+	<div class="introduce">
+		<div class="title">品牌世界</div>
+		<a class="display brand-intro" href="brandWorld.html">
+			<div style="background: url(../images/home/brand1.png) center"></div>
+			<div style="background: url(../images/home/brand2.png) center"></div>
+		</a>
+		<p class="text">品牌创始人 AS ZHOU 带您进入神奇瑰丽的祖母绿世界</p>
+	</div>
+	<footer>
+		<ul>
+			<li><a href='products.html'>珠宝</a></li>
+			<li><a href='customization.html'>祖母绿定制</a></li>
+			<li><a href='brandWorld.html'>品牌世界</a></li>
+			<li><a href='aboutus.html'>联系我们</a></li>
+			<li class="toTopBt"><a><i class="iconfont icon-jiantou-copy"></i><span>回到页顶</span></a></li>
+		</ul>
+	</footer>
+	<div class="loading">
+		<img src="../images/ver-logo.png"/>
+		<p>Columbia Emerabld</p>
+	</div>
+
+	<script src='../js/jQuery.min.js'></script>
+	<script src='../js/jquery.mobile.min.js'></script>
+	<script src="../js/swiper.js"></script>
+	<script type="text/javascript">
+		$('.nav-Bt').on('tap',function(){
+			$('.nav').addClass('nav-on');
+			$('.header-bg').fadeIn(100);
+			return false
+		})
+
+		$('body').on('tap',function(){
+			$('.nav').removeClass('nav-on');
+			$('.header-bg').fadeOut(100);
+		})
+
+		$('header').on('touchmove',function(e){
+			e.preventDefault();
+		})
+
+		$('.toTopBt').on('tap',function(){
+			$('body').animate({scrollTop:0});
+		})
+
+		var mySwiper = new Swiper ('.swiper-container', {
+		    loop: true,
+		    pagination: '.swiper-pagination',
+		    autoplay : 5000,
+		    speed:1200
+		})
+
+		var preload = $('.preload'),
+			loadImgArr = [];
+
+		preload.each(function(){
+			loadImgArr.push($(this).attr('src'));
+		})
+
+		load(loadImgArr);
+
+		function load(arr){
+			var loadCount = 0;
+			for(var i=0;i<arr.length;i++){
+				var img = new Image();
+				img.src = arr[i];
+				img.onload = function(){
+					loadCount++;
+					if(loadCount==arr.length){
+						setTimeout(function(){
+							$('.loading').fadeOut(100);
+						},300);
+					}
+				}
+			}
+		}		
+	</script>
+</body>
+</html>

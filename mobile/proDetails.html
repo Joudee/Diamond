@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+	<meta name="format-detection" content="telephone=no" />  
+    <meta name="format-detection" content="email=no" />
+	<title>产品详情</title>
+	<link rel="stylesheet" href="../css/mobile.css">
+	<link rel="stylesheet" href="../css/swiper.css">
+	<link rel="stylesheet" href="../font/iconfont.css">
+</head>
+<body>
+	<header>
+		<div class="header-container">
+			<a href="index.html"><img src="../images/logo.png"></a>
+			<div class="nav-Bt">
+				<div></div>
+				<div></div>
+				<div></div>
+			</div>
+		</div>
+		<ul class='nav'>
+			<li>
+				<a href='products.html'>
+					<span>珠宝</span>
+					<i class="iconfont icon-icon07"></i>
+				</a>
+			</li>
+			<li>
+				<a href='customization.html'>
+					<span>祖母绿定制</span>
+					<i class="iconfont icon-icon07"></i>
+				</a>
+			</li>
+			<li>
+				<a href='brandWorld.html'>
+					<span>品牌世界</span>
+					<i class="iconfont icon-icon07"></i>
+				</a>
+			</li>
+			<li>
+				<a href='aboutus.html'>
+					<span>联系我们</span>
+					<i class="iconfont icon-icon07"></i>
+				</a>
+			</li>
+		</ul>
+		<div class="header-bg"></div>
+	</header>
+	<div class="pro-swiper-container">
+	    <div class="swiper-wrapper"></div>
+	    <div class="swiper-pagination"></div>
+	</div>
+	<div class='pro-big-show'>
+		<img src="../images/ring/A9/bannerBig.png">
+	</div>
+	<div class='pro-price'>
+		<h1>祖母绿钻石群镶婚戒</h1>
+		<h2>编号：戒指A3</h2>
+		<h3>¥43999</h3>
+		<h4>参考价格</h4>
+		<a class='buy-bt' href='customization.html'>开始定制</a>
+	</div>
+	<div class='pro-size'>
+		<h1>产品规格</h1>
+		<p class="main">-主石约2.3克拉</p>
+		<p class="clear">-净度：VS2</p>
+		<p class="color">-88颗钻石群镶</p>
+		<p class="match">-18K金</p>
+		<p class="cut">-水滴状切割</p>
+	</div>
+	<div class='pro-exhibit'>
+		<h1>产品展示</h1>
+	</div>
+	<div class='allpro-swiper'>
+		<h1>同时探索</h1>
+		<div class='allpro-swiper-container'>
+			<div class="swiper-wrapper"></div>
+		</div>
+		<a class='all-pro-bt'>所有戒指</a>
+	</div>
+
+	<footer>
+		<ul>
+			<li><a href='products.html'>珠宝</a></li>
+			<li><a href='customization.html'>祖母绿定制</a></li>
+			<li><a href='brandWorld.html'>品牌世界</a></li>
+			<li><a href='aboutus.html'>联系我们</a></li>
+			<li class="toTopBt"><a><i class="iconfont icon-jiantou-copy"></i><span>回到页顶</span></a></li>
+		</ul>
+	</footer>
+
+	<script src='../js/jQuery.min.js'></script>
+	<script src='../js/jquery.mobile.min.js'></script>
+	<script src="../js/swiper.js"></script>
+	<script src="../json/products.js"></script>
+	<script src="../js/underscore.js"></script>
+	<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+	<script type="text/javascript">
+		var arg = resolveURL(),
+			ringList = getJson()[arg.type],
+			proSwiperWrapper = $(".pro-swiper-container .swiper-wrapper"),
+			allProSwiperWrapper = $('.allpro-swiper-container .swiper-wrapper');
+
+		$('.nav-Bt').on('tap',function(){
+			$('.nav').addClass('nav-on');
+			$('.header-bg').fadeIn(100);
+			return false
+		})
+
+		$('body').on('tap',function(){
+			$('.nav').removeClass('nav-on');
+			$('.header-bg').fadeOut(100);
+		})
+
+		$('header').on('touchmove',function(e){
+			e.preventDefault();
+		})
+
+		$('.toTopBt').on('tap',function(){
+			$('body').animate({scrollTop:0});
+		})
+
+		
+		var ring = _.find(ringList,function(v){
+			return v.number == arg.id
+		})
+		
+
+		ring.banner.map((v,k)=>{
+			proSwiperWrapper.append(`<div class="swiper-slide" data-id='${k}'><img src="${v}"/></div>`);
+		})
+
+		var showOthers = 0;
+		ringList.map((v,k)=>{
+			if(v.number != arg.id){
+				allProSwiperWrapper.append(`<div class="swiper-slide"><a href='proDetails.html?type=${arg.type}&id=${v.number}'><img src="${v.banner[0]}"/><p>*${v.numberName} ${v.number}</p></a></div>`);
+				showOthers++;
+			}
+		})
+
+		if(showOthers==0){
+			$('.allpro-swiper').fadeOut(100);
+		}
+
+		var mySwiper = new Swiper ('.pro-swiper-container', {
+		    loop: true,
+		    pagination: '.swiper-pagination',
+		    autoplay : 5000,
+		    speed:1200
+		})
+
+		var proSwiper = new Swiper ('.allpro-swiper-container', {
+		    slidesPerView: 2,
+	        centeredSlides: true,
+	        spaceBetween: 20,
+	        freeMode : true
+		})
+
+		if(ring.name){
+			$(".pro-price h1").html(ring.name);
+			$(".pro-price h2").html('编号：'+ring.numberName+' '+ring.number);
+			$(".pro-price h3").html('¥'+ring.price);
+			$(".main").html('-'+ring.size.main);
+			$(".color").html('-'+ring.size.color);
+			$(".clear").html('-'+ring.size.clear);
+			$(".cut").html('-'+ring.size.cut);
+			$(".match").html('-'+ring.size.match);
+		}else{
+			$(".pro-price h1").html('实物以定制为准');
+			$(".pro-price h2").html('编号：'+ring.numberName+' '+ring.number);
+			$(".pro-price h3").html('实际价格以定制为准');
+			$(".pro-size").fadeOut(100);
+		}
+
+		if(arg.type=='xingzuo'){
+			$('.pro-size').empty();
+			$('.pro-size').append('<h1>产品规格</h1>'+
+				'<p class="clear">-净度：'+ring.size.clear+'</p>'+
+				'<p class="color">-'+ring.size.color+'</p>'+
+				'<p class="cut">-'+ring.size.cut+'</p>');
+			$('.pro-price h2').hide();
+			$('.pro-price h4').hide();
+		}
+
+		if(ring.des){
+			ring.des.map((v,k)=>{
+				$('.pro-exhibit').append(`<p>${v}</p>`);
+			})
+		}
+
+		if(!ring.showList){
+			$('.pro-exhibit').fadeOut(100);
+		}else{
+			ring.showList.map((v,k)=>{
+				$('.pro-exhibit').append(`<div class='pro-exhibit-img' style="background: url(${v}) center"></div>`);
+			})
+		}
+
+		var canShowBig = true;
+		$(".pro-swiper-container").on('touchmove',function(){
+			canShowBig = false;
+		})
+		$(".pro-swiper-container").on('touchend',function(){
+			setTimeout(function(){
+				canShowBig = true;
+			},0)
+		})
+
+		$(".pro-swiper-container .swiper-wrapper .swiper-slide").on('tap',function(){
+			if(canShowBig){
+				$('.pro-big-show img').attr('src',ring.big[$(this).attr('data-id')]);
+				$('.pro-big-show').fadeIn(100);
+			}
+			return false
+		})
+
+		$('body').on('tap',function(){
+			$('.pro-big-show').fadeOut(100);
+		})
+
+		$('.pro-big-show img').on('tap',function(){
+			return false
+		})
+
+		if(arg.type=='xingzuo'){
+			$(".all-pro-bt").html('所有星座系列');
+		}else{
+			$(".all-pro-bt").html('所有'+ring.numberName);
+		}
+		
+		$(".all-pro-bt").attr('href','products.html?type='+arg.type);
+	</script>
+</body>
+</html>

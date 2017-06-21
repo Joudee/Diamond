@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+	<meta name="format-detection" content="telephone=no" />  
+    <meta name="format-detection" content="email=no" />
+	<title>达碧水专题</title>
+	<link rel="stylesheet" href="../css/mobile.css">
+	<link rel="stylesheet" href="../css/swiper.css">
+	<link rel="stylesheet" href="../font/iconfont.css">
+</head>
+<body>
+	<header>
+		<div class="header-container">
+			<a href="index.html"><img src="../images/logo.png"></a>
+			<div class="nav-Bt">
+				<div></div>
+				<div></div>
+				<div></div>
+			</div>
+		</div>
+		<ul class='nav'>
+			<li>
+				<a href='products.html'>
+					<span>珠宝</span>
+					<i class="iconfont icon-icon07"></i>
+				</a>
+			</li>
+			<li>
+				<a href='customization.html'>
+					<span>祖母绿定制</span>
+					<i class="iconfont icon-icon07"></i>
+				</a>
+			</li>
+			<li>
+				<a href='brandWorld.html'>
+					<span>品牌世界</span>
+					<i class="iconfont icon-icon07"></i>
+				</a>
+			</li>
+			<li>
+				<a href='aboutus.html'>
+					<span>联系我们</span>
+					<i class="iconfont icon-icon07"></i>
+				</a>
+			</li>
+		</ul>
+		<div class="header-bg"></div>
+	</header>
+	<div class="dblBanner" style="background: url(../images/dblSpecial/banner.png) center">
+		<p>TRAPICHE EMERALD SERIES</p>
+	</div>
+	<div class="dbl-des">
+		<h1>达碧兹祖母绿系列</h1>
+		<img src='../images/dblSpecial/line.png'/>
+		<p>这是一种特殊类型的祖母绿，产自哥伦比亚姆佐地区和契沃尔地区，它具有特殊的生长特征。姆佐产出达碧兹在宝石中间有暗色核和放射状的臂，是有碳质包裹体和钠长石组成，有时会有方解石，黄铁矿罕见。X射线的放射证明这种达碧兹是一整个单晶。</p>
+		<a href="customization.html">开始定制</a>
+	</div>
+	<div class="dbl-pro">
+		<img src="../images/dblSpecial/pro.png"/>
+	</div>
+	<div class="dbl-pro-details">
+		<h1>产品实例</h1>
+		<div class="dbl-pro-details-content">
+			<img src="../images/dblSpecial/SHOW@2x.png" class="show showright">
+			<div class="displayBig left" style="background: url(../images/dblSpecial/dis1.png) center">
+				<img src="../images/dblSpecial/01@2x.png" />
+			</div>
+			<div class="displaySmall right" style="background: url(../images/dblSpecial/dis2.png) center"></div>
+			<p>契沃尔出产的达碧兹，中心为绿色六边形核，由核的六边形柱向外伸出六条绿臂</p>
+		</div>
+		<div class="dbl-pro-details-content">
+			<img src="../images/dblSpecial/SHOW@2x.png" class="show showleft">
+			<div class="displayBig right" style="background: url(../images/dblSpecial/dis3.png) center">
+				<img src="../images/dblSpecial/02@2x.png" />
+			</div>
+			<div class="displaySmall left" style="background: url(../images/dblSpecial/dis4.png) center"></div>
+			<p>在臂之间的V形区中是钠长石和祖母绿的混合物，X射线放射证明这种达碧兹祖母绿也为单晶体，钠长石被包裹在祖母绿的晶体中。</p>
+		</div>
+	</div>
+
+	<div class="dbl-authenticate">
+		<h1>鉴定达碧兹祖母绿</h1>
+		<img src="../images/dblSpecial/authenticate.png">
+		<p>1）在晃动下是否出现美妙的猫眼效应<br/>2）矿物质达碧兹壁是否形成完整的图腾<br/>3）部分达碧兹在灯光下形成完整完整的六芒星</p>
+	</div>
+
+	<script src='../js/jQuery.min.js'></script>
+	<script src='../js/jquery.mobile.min.js'></script>
+	<script type="text/javascript">
+		$('.nav-Bt').on('tap',function(){
+			$('.nav').addClass('nav-on');
+			$('.header-bg').fadeIn(100);
+			return false
+		})
+
+		$('body').on('tap',function(){
+			$('.nav').removeClass('nav-on');
+			$('.header-bg').fadeOut(100);
+		})
+
+		$('header').on('touchmove',function(e){
+			e.preventDefault();
+		})
+
+		$('.toTopBt').on('tap',function(){
+			$('body').animate({scrollTop:0});
+		})
+	</script>
+</body>
+</html>
